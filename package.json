@@ -2,7 +2,7 @@
   "name": "electron-quick-start",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "main.js",
+  "main": "browseit/browseit.js",
   "scripts": {
     "start": "electron .",
     "start:browseit": "electron ./browseit/browseit.js",
