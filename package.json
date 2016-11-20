@@ -1,5 +1,5 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-web-chapter",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "browseit/browseit.js",
@@ -7,7 +7,10 @@
     "start": "electron .",
     "start:react": "electron ./react/",
     "start:browseit": "electron ./browseit/browseit.js",
-    "start:vgnews": "electron ./vgnews/vg-window.js"
+    "start:vgnews": "electron ./vgnews/vg-window.js",
+    "build:osx": "electron-packager . --platform=darwin --out=dist/osx --ignore=dist --ignore=.idea",
+    "build:linux": "electron-packager . --platform=linux --arch=x64 --out=dist/linux --ignore=dist --ignore=.idea",
+    "build:win": "electron-packager . --platform=win32 --out=dist/win --ignore=dist --ignore=.idea"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
