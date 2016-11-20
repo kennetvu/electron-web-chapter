@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <link href="vgnews.css" rel="stylesheet" type="text/css" />
+    <!-- http://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <!-- Insert this line after script imports -->
+    <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <!--<script src="../assets/js/browser.js" type="text/javascript"></script>-->
+    <script>if (window.module) module = window.module;</script>
+</head>
+<body>
+<webview src="https://www.vg.no/" id="vg" autosize="on" nodeintegration plugins preload="./prevg.js"></webview>
+</body>
+ <!--<script src="vgnews.js"></script>-->
+<script>
+  const webview = document.getElementById("vg");
+  webview.addEventListener('dom-ready', () => {
+    webview.openDevTools();
+  });
+  // You can also require other files to run in this process
+//  require('./renderer.js')
+</script>
+</html>

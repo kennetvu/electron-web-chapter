@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "start:browseit": "electron ./browseit/browseit.js"
+    "start:browseit": "electron ./browseit/browseit.js",
+    "start:vgnews": "electron ./vgnews/vg-window.js"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
