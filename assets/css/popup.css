@@ -16,7 +16,9 @@ body {
   height: 540px;
   font-family: Raleway;
   font-size: 9pt;
-  margin: 0;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
 }
 
@@ -30,8 +32,9 @@ main {
 
   width: 740px;
   padding: 30px;
+  padding-top: 100px;
 
-  position: absolute;
+  /*position: absolute;*/
   top: 60px;
   right: 0;
   bottom: 45px;
@@ -75,11 +78,11 @@ div.shadowbox {
 
 header {
   background-image: url('../img/banner.png');
-  background-size: cover;
+  background-size: 100% 100%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 800px;
+  width: 100%;
   height: 89px;
   padding: 0;
   margin: 0;
@@ -119,6 +122,7 @@ section.administration {
 section.nooblist {
   float: left;
   width: 100%;
+  margin-bottom:50px;
 }
 section h3 {
   font-family: RalewayBold;
@@ -169,7 +173,7 @@ footer {
   box-shadow: 0px 5px 10px 3px grey;
   color: #ccc;
   position: fixed;
-  width: 800px;
+  width: 100%;
   height: 45px;
   bottom: 0;
   left: 0;
@@ -192,9 +196,9 @@ footer a#expand {
 
 footer div#feedback {
   position: relative;
-  float: left;
-  margin-top: 9px;
-  margin-left: 100px;
+  /*float: left;*/
+  margin: 9px auto;
+  /*margin-left: 100px;*/
   width: 600px;
 }
 
@@ -203,12 +207,14 @@ footer div#feedback a {
 }
 
 footer div#counter {
-  position: relative;
+  position: absolute;
   float: left;
   margin-top: 11px;
   margin-left: 14px;
   font-size: 14pt;
   color: #555;
+  bottom: 11px;
+  right:50px;
 }
 
 /* Details */
