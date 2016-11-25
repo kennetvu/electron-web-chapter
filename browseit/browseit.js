@@ -1,5 +1,5 @@
 const electron = require('electron');
-const { app, globalShortcut, BrowserWindow, shell, Menu, Tray } = electron;
+const { app, globalShortcut, BrowserWindow, shell } = electron;
 // app - Module to control application life.
 // globalShortcut - Module to create global shortcut.
 // BrowserHistory - Module to create native browser window.
