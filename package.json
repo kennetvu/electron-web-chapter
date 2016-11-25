@@ -2,7 +2,7 @@
   "name": "electron-web-chapter",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "browseit/browseit.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "start:react": "electron ./react/",
