@@ -1,5 +1,5 @@
 const electron = require('electron');
-const { app, globalShortcut, BrowserWindow, shell } = electron;
+const { app, globalShortcut, BrowserWindow, shell, Menu, Tray } = electron;
 // app - Module to control application life.
 // globalShortcut - Module to create global shortcut.
 // BrowserHistory - Module to create native browser window.
@@ -10,17 +10,28 @@ const url = require('url');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
+let tray;
 
 function createBrowseitWindow() {
   // Create the browser window.
+  // http://electron.atom.io/docs/api/browser-window/#new-browserwindowoptions
   mainWindow = new BrowserWindow({
-    // if time
-    // frame: false,
     width: 800,
     height: 600,
     minWidth: 800,
-    minHeight: 600
+    minHeight: 600,
+    title: 'Electron browseit',
 
+    // if time
+    // x: 0,
+    // y: 0,
+    // center: true,
+    // frame: false,
+    // movable: false,
+    // resizable: false,
+    // alwaysOnTop: true,
+    // fullscreen: true,
+    // transparent: true,
   });
 
   // and load the index.html of the app.
@@ -30,28 +41,7 @@ function createBrowseitWindow() {
     slashes: true
   }));
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
-
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null;
-  })
-
-  // register hotkey
-  /*  if (command == 'open_confluence') {
-      openTab('https://projects.knowit.no/');
-    }
-    if (command == 'open_jira') {
-      openTab('https://support.knowit.no/');
-    }
-    if (command == 'open_bitbucket') {
-      openTab('https://kode.knowit.no/');
-    }
-  */
+  // Global shortcut
 
   // Register a 'Ctrl+Shift+X' shortcut listener.
   const confluence = globalShortcut.register('Ctrl+Shift+C', () => {
@@ -68,9 +58,41 @@ function createBrowseitWindow() {
     shell.openExternal('https://kode.knowit.no/');
   })
 
+  // Open the DevTools.
+  // mainWindow.webContents.openDevTools();
 
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null;
+  });
 
-
+  // const template = [{
+  //     role: 'Menu',
+  //     submenu: [
+  //       {
+  //         role: 'Submenu 1'
+  //       },
+  //       {
+  //         role: 'Submenu 2'
+  //       },
+  //     ]
+  //   }]
+  //
+  //
+  // const menu = Menu.buildFromTemplate(template)
+  // Menu.setApplicationMenu(menu)
+  // tray = new Tray('')
+  // const contextMenu = Menu.buildFromTemplate([
+  //   {label: 'Item1', type: 'radio'},
+  //   {label: 'Item2', type: 'radio'},
+  //   {label: 'Item3', type: 'radio', checked: true},
+  //   {label: 'Item4', type: 'radio'}
+  // ])
+  // tray.setToolTip('This is my application.')
+  // tray.setContextMenu(contextMenu)
 }
 
 // This method will be called when Electron has finished
